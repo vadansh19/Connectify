@@ -10,10 +10,15 @@ class RemoteClient : Form
 {
     #region Private Fields
 
-    TcpClient client;
     Size hostImageSize;
     PictureBox pb;
-    NetworkStream stream;
+
+    TcpClient imageclient;
+    TcpClient inputclient;
+    NetworkStream imagestream;
+    NetworkStream inputstream;
+    //TcpClient client;
+    //NetworkStream stream;
 
     #endregion Private Fields
 
@@ -37,9 +42,13 @@ class RemoteClient : Form
 
     public void Start(string host)
     {
-        client = new TcpClient();
-        client.Connect(host, 8888);
-        stream = client.GetStream();
+        imageclient = new TcpClient();
+        imageclient.Connect(host, 8888);
+        imagestream = imageclient.GetStream();
+
+        inputclient = new TcpClient();
+        inputclient.Connect(host, 8889);
+        inputstream = inputclient.GetStream();
 
         Thread receiveThread = new Thread(ReceiveScreenLoop);
         receiveThread.IsBackground = true;
@@ -92,7 +101,7 @@ class RemoteClient : Form
                 int read = 0;
                 while (read < 4)
                 {
-                    int r = stream.Read(lenBytes, read, 4 - read);
+                    int r = imagestream.Read(lenBytes, read, 4 - read);
                     if (r == 0) return;
                     read += r;
                 }
@@ -101,7 +110,7 @@ class RemoteClient : Form
                 read = 0;
                 while (read < len)
                 {
-                    int r = stream.Read(imgBytes, read, len - read);
+                    int r = imagestream.Read(imgBytes, read, len - read);
                     if (r == 0) return;
                     read += r;
                 }
@@ -140,7 +149,7 @@ class RemoteClient : Form
 
     void SendMouseEvent(byte eventType, short x, short y)
     {
-        if (stream == null) return;
+        if (inputstream == null) return;
 
         byte[] data = new byte[6];
         data[0] = 0x01; // Mouse packet
@@ -148,19 +157,19 @@ class RemoteClient : Form
         BitConverter.GetBytes(x).CopyTo(data, 2);
         BitConverter.GetBytes(y).CopyTo(data, 4);
 
-        try { stream.Write(data, 0, data.Length); } catch { }
+        try { inputstream.Write(data, 0, data.Length); } catch { }
     }
 
     void SendKeyboardEvent(byte keyCode, bool isKeyUp)
     {
-        if (stream == null) return;
+        if (inputstream == null) return;
 
         byte[] data = new byte[3];
         data[0] = 0x02; // Keyboard packet
         data[1] = keyCode;
         data[2] = (byte)(isKeyUp ? 1 : 0);
 
-        try { stream.Write(data, 0, data.Length); } catch { }
+        try { inputstream.Write(data, 0, data.Length); } catch { }
     }
 
     private void SyncMouse(MouseEventArgs e, out int scaledX, out int scaledY)

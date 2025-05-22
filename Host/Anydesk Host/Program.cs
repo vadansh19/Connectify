@@ -17,9 +17,12 @@ class RemoteHost
     const uint MOUSEEVENTF_RIGHTUP = 0x0010;
     const uint KEYBOARDEVENTF_DOWN = 0u;
     const uint KEYBOARDEVENTF_UP = 0x0002u;
-    static TcpClient client;
-    static TcpListener listener;
-    static NetworkStream stream;
+    static TcpClient imageclient;
+    static TcpClient inputclient;
+    static TcpListener imageListener;
+    static TcpListener inputListener;
+    static NetworkStream imagestream;
+    static NetworkStream inputstream;
 
     #endregion Private Fields
 
@@ -45,13 +48,20 @@ class RemoteHost
     {
         SetProcessDPIAware();
 
-        listener = new TcpListener(IPAddress.Any, 8888);
-        listener.Start();
+        inputListener = new TcpListener(IPAddress.Any, 8889);
+        inputListener.Start();
+
+        imageListener = new TcpListener(IPAddress.Any, 8888);
+        imageListener.Start();
         Console.WriteLine("Waiting for client...");
 
-        client = listener.AcceptTcpClient();
-        Console.WriteLine("Client connected!");
-        stream = client.GetStream();
+        inputclient = inputListener.AcceptTcpClient();
+        Console.WriteLine("Input Client connected!");
+        inputstream = inputclient.GetStream();
+
+        imageclient = imageListener.AcceptTcpClient();
+        Console.WriteLine("Image Client connected!");
+        imagestream = imageclient.GetStream();
 
         Thread receiveInputThread = new Thread(ReceiveInputLoop);
         receiveInputThread.IsBackground = true;
@@ -66,17 +76,21 @@ class RemoteHost
             try
             {
                 byte[] lenBytes = BitConverter.GetBytes(jpegData.Length);
-                stream.Write(lenBytes, 0, 4);
-                stream.Write(jpegData, 0, jpegData.Length);
+                imagestream.Write(lenBytes, 0, 4);
+                imagestream.Write(jpegData, 0, jpegData.Length);
             }
             catch { break; }
 
-            Thread.Sleep(100);
+            Thread.Sleep(66);
         }
 
-        stream.Close();
-        client.Close();
-        listener.Stop();
+        imagestream.Close();
+        imageclient.Close();
+        imageListener.Stop();
+
+        inputstream.Close();
+        inputclient.Close();
+        inputListener.Stop();
     }
 
     #endregion Public Methods
@@ -111,7 +125,7 @@ class RemoteHost
         {
             while (true)
             {
-                int packetType = stream.ReadByte();
+                int packetType = inputstream.ReadByte();
                 if (packetType == -1) return;
 
                 switch (packetType)
@@ -121,7 +135,7 @@ class RemoteHost
                         int read = 0;
                         while (read < 5)
                         {
-                            int r = stream.Read(mouseBuffer, read, 5 - read);
+                            int r = inputstream.Read(mouseBuffer, read, 5 - read);
                             if (r == 0) return;
                             read += r;
                         }
@@ -148,7 +162,7 @@ class RemoteHost
 
                     case 0x02: // Keyboard event
                         byte[] kbBuffer = new byte[2];
-                        if (stream.Read(kbBuffer, 0, 2) < 2) return;
+                        if (inputstream.Read(kbBuffer, 0, 2) < 2) return;
                         byte keyCode = kbBuffer[0];
                         byte keyState = kbBuffer[1];
                         const uint KEYEVENTF_KEYUP = 0x0002;
@@ -160,8 +174,6 @@ class RemoteHost
         }
         catch { }
     }
-
-
 
     #endregion Private Methods
 }
