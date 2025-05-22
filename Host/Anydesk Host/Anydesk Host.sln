@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anydesk Host", "Anydesk Host.csproj", "{D056EDF1-E567-4DED-A02A-4C769DF31B52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anydesk Client", "..\..\Client\Anydesk Client\Anydesk Client.csproj", "{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D056EDF1-E567-4DED-A02A-4C769DF31B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D056EDF1-E567-4DED-A02A-4C769DF31B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D056EDF1-E567-4DED-A02A-4C769DF31B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D056EDF1-E567-4DED-A02A-4C769DF31B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A17914E-0C18-468C-81F2-C5FFB90BD3C9}
+	EndGlobalSection
+EndGlobal

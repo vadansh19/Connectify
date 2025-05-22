@@ -1,0 +1,9 @@
+C:\Workspace\Prac\Anydesk\Client\Anydesk Client\bin\Debug\Anydesk Client.exe.config
+C:\Workspace\Prac\Anydesk\Client\Anydesk Client\bin\Debug\Anydesk Client.exe
+C:\Workspace\Prac\Anydesk\Client\Anydesk Client\bin\Debug\Anydesk Client.pdb
+C:\Workspace\Prac\Anydesk\Client\Anydesk Client\obj\Debug\Anydesk Client.csproj.AssemblyReference.cache
+C:\Workspace\Prac\Anydesk\Client\Anydesk Client\obj\Debug\Anydesk Client.csproj.CoreCompileInputs.cache
+C:\Workspace\Prac\Anydesk\Client\Anydesk Client\obj\Debug\Anydesk Client.exe
+C:\Workspace\Prac\Anydesk\Client\Anydesk Client\obj\Debug\Anydesk Client.pdb
+C:\Workspace\Prac\Anydesk\Client\Anydesk Client\obj\Debug\RemoteClient.resources
+C:\Workspace\Prac\Anydesk\Client\Anydesk Client\obj\Debug\Anydesk Client.csproj.GenerateResource.cache

@@ -1,0 +1,11 @@
+C:\Workspace\Prac\Anydesk\Host\Anydesk Host\bin\Debug\Anydesk Host.exe.config
+C:\Workspace\Prac\Anydesk\Host\Anydesk Host\bin\Debug\Anydesk Host.exe
+C:\Workspace\Prac\Anydesk\Host\Anydesk Host\bin\Debug\Anydesk Host.pdb
+C:\Workspace\Prac\Anydesk\Host\Anydesk Host\bin\Debug\System.Drawing.Common.dll
+C:\Workspace\Prac\Anydesk\Host\Anydesk Host\bin\Debug\System.Drawing.Common.pdb
+C:\Workspace\Prac\Anydesk\Host\Anydesk Host\bin\Debug\System.Drawing.Common.xml
+C:\Workspace\Prac\Anydesk\Host\Anydesk Host\obj\Debug\Anydesk Host.csproj.AssemblyReference.cache
+C:\Workspace\Prac\Anydesk\Host\Anydesk Host\obj\Debug\Anydesk Host.csproj.CoreCompileInputs.cache
+C:\Workspace\Prac\Anydesk\Host\Anydesk Host\obj\Debug\Anydesk .0875679C.Up2Date
+C:\Workspace\Prac\Anydesk\Host\Anydesk Host\obj\Debug\Anydesk Host.exe
+C:\Workspace\Prac\Anydesk\Host\Anydesk Host\obj\Debug\Anydesk Host.pdb

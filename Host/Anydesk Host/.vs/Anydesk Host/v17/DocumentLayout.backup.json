@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Workspace\\Prac\\Anydesk\\Host\\Anydesk Host\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}|..\\..\\Client\\Anydesk Client\\Anydesk Client.csproj|c:\\workspace\\prac\\anydesk\\client\\anydesk client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Anydesk Host.csproj|C:\\Workspace\\Prac\\Anydesk\\Host\\Anydesk Host\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Anydesk Host.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Workspace\\Prac\\Anydesk\\Client\\Anydesk Client\\Program.cs",
+              "RelativeDocumentMoniker": "..\\..\\Client\\Anydesk Client\\Program.cs",
+              "ToolTip": "C:\\Workspace\\Prac\\Anydesk\\Client\\Anydesk Client\\Program.cs",
+              "RelativeToolTip": "..\\..\\Client\\Anydesk Client\\Program.cs",
+              "ViewState": "AgIAAEsAAADAZGZmZoYzwL4AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T09:50:54.968Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1352618266:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Workspace\\Prac\\Anydesk\\Host\\Anydesk Host\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Workspace\\Prac\\Anydesk\\Host\\Anydesk Host\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAAAKIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T09:48:05.558Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
