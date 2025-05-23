@@ -74,10 +74,12 @@ class RemoteClient : Form
         pb.SizeMode = PictureBoxSizeMode.StretchImage;
         pb.BackgroundImageLayout = ImageLayout.Stretch;
         this.KeyPreview = true;
-        //this.KeyDown += RemoteClient_KeyDown;
-        //this.KeyUp += RemoteClient_KeyUp;
+        this.KeyDown += RemoteClient_KeyDown;
+        this.KeyUp += RemoteClient_KeyUp;
         pb.MouseMove += RemoteClient_MouseMove;
         pb.MouseClick += RemoteClient_MouseClick;
+        pb.MouseWheel += RemoteClient_MouseWheel;
+        pb.MouseDoubleClick += RemoteClient_MouseDoubleClick;
         this.Controls.Add(pb);
     }
 
@@ -147,6 +149,29 @@ class RemoteClient : Form
         SendMouseEvent(0, (short)scaledX, (short)scaledY);
     }
 
+    private void RemoteClient_MouseWheel(object sender, MouseEventArgs e)
+    {
+        int delta = e.Delta; // positive for up, negative for down
+        SendMouseScroll(delta);
+    }
+
+    void SendMouseScroll(int delta)
+    {
+        if (inputstream == null) return;
+
+        byte[] data = new byte[6];
+        data[0] = 0x03; // Scroll packet
+        Array.Copy(BitConverter.GetBytes(delta), 0, data, 1, 4);
+        try { inputstream.Write(data, 0, 5); } catch { }
+    }
+
+    private void RemoteClient_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+        int scaledX, scaledY;
+        SyncMouse(e, out scaledX, out scaledY);
+        SendMouseEvent(3, (short)scaledX, (short)scaledY); // 3 = double-click
+    }
+
     void SendMouseEvent(byte eventType, short x, short y)
     {
         if (inputstream == null) return;
@@ -199,15 +224,7 @@ class RemoteClient : Form
 
     private void RemoteClient_KeyUp(object sender, KeyEventArgs e)
     {
-        //SendKeyboardEvent((byte)e.KeyValue, true); // key up
-    }
-
-    protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-    {
-        byte vk = (byte)keyData;
-        SendKeyboardEvent(vk, false); // Key down
-        SendKeyboardEvent(vk, true);  // Key up
-        return base.ProcessCmdKey(ref msg, keyData);
+        SendKeyboardEvent((byte)e.KeyValue, true); // key up
     }
 
     #endregion Private Methods

@@ -158,6 +158,14 @@ class RemoteHost
                             mouse_event(MOUSEEVENTF_RIGHTDOWN, (uint)x, (uint)y, 0, 0);
                             mouse_event(MOUSEEVENTF_RIGHTUP, (uint)x, (uint)y, 0, 0);
                         }
+                        else if (eventType == 3) // double-click
+                        {
+                            mouse_event(MOUSEEVENTF_LEFTDOWN, (uint)x, (uint)y, 0, 0);
+                            mouse_event(MOUSEEVENTF_LEFTUP, (uint)x, (uint)y, 0, 0);
+                            Thread.Sleep(50);
+                            mouse_event(MOUSEEVENTF_LEFTDOWN, (uint)x, (uint)y, 0, 0);
+                            mouse_event(MOUSEEVENTF_LEFTUP, (uint)x, (uint)y, 0, 0);
+                        }
                         break;
 
                     case 0x02: // Keyboard event
@@ -168,6 +176,14 @@ class RemoteHost
                         const uint KEYEVENTF_KEYUP = 0x0002;
                         uint flags = (keyState == 1) ? KEYEVENTF_KEYUP : 0;
                         keybd_event(keyCode, 0, flags, UIntPtr.Zero);
+                        break;
+
+                    case 0x03: // Mouse scroll
+                        byte[] scrollBuffer = new byte[4];
+                        if (inputstream.Read(scrollBuffer, 0, 4) < 4) return;
+                        int delta = BitConverter.ToInt32(scrollBuffer, 0);
+                        const uint MOUSEEVENTF_WHEEL = 0x0800;
+                        mouse_event(MOUSEEVENTF_WHEEL, 0, 0, (uint)delta, 0);
                         break;
                 }
             }
