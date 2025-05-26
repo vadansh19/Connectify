@@ -1,0 +1,12 @@
+C:\Workspace\Prac\Connectify\Client\Connectify Client\bin\Debug\Anydesk Client.exe.config
+C:\Workspace\Prac\Connectify\Client\Connectify Client\bin\Debug\Anydesk Client.exe
+C:\Workspace\Prac\Connectify\Client\Connectify Client\bin\Debug\Anydesk Client.pdb
+C:\Workspace\Prac\Connectify\Client\Connectify Client\bin\Debug\ClipboardSync.dll
+C:\Workspace\Prac\Connectify\Client\Connectify Client\bin\Debug\ClipboardSync.pdb
+C:\Workspace\Prac\Connectify\Client\Connectify Client\obj\Debug\Connectify Client.csproj.AssemblyReference.cache
+C:\Workspace\Prac\Connectify\Client\Connectify Client\obj\Debug\RemoteClient.resources
+C:\Workspace\Prac\Connectify\Client\Connectify Client\obj\Debug\Connectify Client.csproj.GenerateResource.cache
+C:\Workspace\Prac\Connectify\Client\Connectify Client\obj\Debug\Connectify Client.csproj.CoreCompileInputs.cache
+C:\Workspace\Prac\Connectify\Client\Connectify Client\obj\Debug\Connecti.E825B190.Up2Date
+C:\Workspace\Prac\Connectify\Client\Connectify Client\obj\Debug\Anydesk Client.exe
+C:\Workspace\Prac\Connectify\Client\Connectify Client\obj\Debug\Anydesk Client.pdb

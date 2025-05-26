@@ -1,0 +1,13 @@
+C:\Workspace\Prac\Connectify\Host\Connectify Host\bin\Debug\Anydesk Host.exe.config
+C:\Workspace\Prac\Connectify\Host\Connectify Host\bin\Debug\Anydesk Host.exe
+C:\Workspace\Prac\Connectify\Host\Connectify Host\bin\Debug\Anydesk Host.pdb
+C:\Workspace\Prac\Connectify\Host\Connectify Host\bin\Debug\ClipboardSync.dll
+C:\Workspace\Prac\Connectify\Host\Connectify Host\bin\Debug\System.Drawing.Common.dll
+C:\Workspace\Prac\Connectify\Host\Connectify Host\bin\Debug\ClipboardSync.pdb
+C:\Workspace\Prac\Connectify\Host\Connectify Host\bin\Debug\System.Drawing.Common.pdb
+C:\Workspace\Prac\Connectify\Host\Connectify Host\bin\Debug\System.Drawing.Common.xml
+C:\Workspace\Prac\Connectify\Host\Connectify Host\obj\Debug\Connectify Host.csproj.AssemblyReference.cache
+C:\Workspace\Prac\Connectify\Host\Connectify Host\obj\Debug\Connectify Host.csproj.CoreCompileInputs.cache
+C:\Workspace\Prac\Connectify\Host\Connectify Host\obj\Debug\Connecti.E2EC483C.Up2Date
+C:\Workspace\Prac\Connectify\Host\Connectify Host\obj\Debug\Anydesk Host.exe
+C:\Workspace\Prac\Connectify\Host\Connectify Host\obj\Debug\Anydesk Host.pdb

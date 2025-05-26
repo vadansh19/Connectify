@@ -4,3 +4,9 @@ C:\Workspace\Prac\Anydesk\ClipboardSync\obj\Debug\ClipboardSync.csproj.AssemblyR
 C:\Workspace\Prac\Anydesk\ClipboardSync\obj\Debug\ClipboardSync.csproj.CoreCompileInputs.cache
 C:\Workspace\Prac\Anydesk\ClipboardSync\obj\Debug\ClipboardSync.dll
 C:\Workspace\Prac\Anydesk\ClipboardSync\obj\Debug\ClipboardSync.pdb
+C:\Workspace\Prac\Connectify\ClipboardSync\bin\Debug\ClipboardSync.dll
+C:\Workspace\Prac\Connectify\ClipboardSync\bin\Debug\ClipboardSync.pdb
+C:\Workspace\Prac\Connectify\ClipboardSync\obj\Debug\ClipboardSync.csproj.AssemblyReference.cache
+C:\Workspace\Prac\Connectify\ClipboardSync\obj\Debug\ClipboardSync.csproj.CoreCompileInputs.cache
+C:\Workspace\Prac\Connectify\ClipboardSync\obj\Debug\ClipboardSync.dll
+C:\Workspace\Prac\Connectify\ClipboardSync\obj\Debug\ClipboardSync.pdb
