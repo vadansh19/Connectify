@@ -17,6 +17,10 @@ class RemoteClient : Form
     TcpClient inputclient;
     NetworkStream imagestream;
     NetworkStream inputstream;
+
+    const int SW_HIDE = 0;
+    const int SW_SHOW = 1;
+
     //TcpClient client;
     //NetworkStream stream;
 
@@ -26,6 +30,12 @@ class RemoteClient : Form
 
     [DllImport("user32.dll")]
     private static extern bool SetProcessDPIAware();
+
+    [DllImport("kernel32.dll")]
+    static extern IntPtr GetConsoleWindow();
+
+    [DllImport("user32.dll")]
+    static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
     #endregion DLL Imports
 
@@ -86,17 +96,25 @@ class RemoteClient : Form
         pb.MouseClick += RemoteClient_MouseClick;
         pb.MouseWheel += RemoteClient_MouseWheel;
         pb.MouseDoubleClick += RemoteClient_MouseDoubleClick;
+        this.WindowState = FormWindowState.Maximized;
         this.Controls.Add(pb);
     }
 
     [STAThread]
-    static void Main(string[] args)
+    static void Main()
     {
         SetProcessDPIAware();
+        var handle = GetConsoleWindow();
+        ShowWindow(handle, SW_SHOW);
+        Console.Write("Enter IP Address (ipconfig) : ");
+        string ipAddress = Console.ReadLine();
+
+        handle = GetConsoleWindow();
+        ShowWindow(handle, SW_HIDE);
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
         var client = new RemoteClient();
-        client.Start("192.168.1.116");
+        client.Start(ipAddress);
     }
 
     void ReceiveScreenLoop()
