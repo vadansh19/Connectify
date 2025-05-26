@@ -9,3 +9,5 @@ C:\Workspace\Prac\Anydesk\Host\Anydesk Host\obj\Debug\Anydesk Host.csproj.CoreCo
 C:\Workspace\Prac\Anydesk\Host\Anydesk Host\obj\Debug\Anydesk .0875679C.Up2Date
 C:\Workspace\Prac\Anydesk\Host\Anydesk Host\obj\Debug\Anydesk Host.exe
 C:\Workspace\Prac\Anydesk\Host\Anydesk Host\obj\Debug\Anydesk Host.pdb
+C:\Workspace\Prac\Anydesk\Host\Anydesk Host\bin\Debug\ClipboardSync.dll
+C:\Workspace\Prac\Anydesk\Host\Anydesk Host\bin\Debug\ClipboardSync.pdb

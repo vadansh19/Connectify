@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anydesk Host", "Anydesk Host.csproj", "{D056EDF1-E567-4DED-A02A-4C769DF31B52}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anydesk Client", "..\..\Client\Anydesk Client\Anydesk Client.csproj", "{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardSync", "..\..\ClipboardSync\ClipboardSync.csproj", "{764C5D4F-23BC-4E06-B88B-525C82641EF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{764C5D4F-23BC-4E06-B88B-525C82641EF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{764C5D4F-23BC-4E06-B88B-525C82641EF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{764C5D4F-23BC-4E06-B88B-525C82641EF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{764C5D4F-23BC-4E06-B88B-525C82641EF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

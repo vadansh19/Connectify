@@ -9,7 +9,7 @@ using System.Threading;
 class RemoteHost
 {
     #region Private Fields
-
+    const uint CLIPBOARD_TEXT = 0x04;
     const uint MOUSEEVENTF_MOVE = 0x0001;
     const uint MOUSEEVENTF_LEFTDOWN = 0x0002;
     const uint MOUSEEVENTF_LEFTUP = 0x0004;
@@ -66,6 +66,9 @@ class RemoteHost
         Thread receiveInputThread = new Thread(ReceiveInputLoop);
         receiveInputThread.IsBackground = true;
         receiveInputThread.Start();
+
+        ClipboardHelper.StartClipboardWatcher(inputstream);
+
 
         while (true)
         {
@@ -185,6 +188,24 @@ class RemoteHost
                         const uint MOUSEEVENTF_WHEEL = 0x0800;
                         mouse_event(MOUSEEVENTF_WHEEL, 0, 0, (uint)delta, 0);
                         break;
+
+                    case 0x04: // Clipboard text
+                        byte[] lengthBytes = new byte[4];
+                        if (inputstream.Read(lengthBytes, 0, 4) < 4) return;
+                        int textLength = BitConverter.ToInt32(lengthBytes, 0);
+                        if (textLength <= 0 || textLength > 10240) return; // sanity check (10KB max)
+                        byte[] textBytes = new byte[textLength];
+                        int bytesRead = 0;
+                        while (bytesRead < textLength)
+                        {
+                            int r = inputstream.Read(textBytes, bytesRead, textLength - bytesRead);
+                            if (r == 0) return;
+                            bytesRead += r;
+                        }
+                        string clipboardText = System.Text.Encoding.UTF8.GetString(textBytes);
+                        ClipboardHelper.SetText(clipboardText); // safely sets clipboard in STA thread
+                        break;
+
                 }
             }
         }

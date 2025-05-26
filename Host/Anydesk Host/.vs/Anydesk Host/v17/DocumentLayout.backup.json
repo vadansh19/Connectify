@@ -3,7 +3,10 @@
   "WorkspaceRootPath": "C:\\Workspace\\Prac\\Anydesk\\Host\\Anydesk Host\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Anydesk Host.csproj|C:\\Workspace\\Prac\\Anydesk\\Host\\Anydesk Host\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{764C5D4F-23BC-4E06-B88B-525C82641EF1}|..\\..\\ClipboardSync\\ClipboardSync.csproj|c:\\workspace\\prac\\anydesk\\clipboardsync\\clipboardhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Anydesk Host.csproj|c:\\workspace\\prac\\anydesk\\host\\anydesk host\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Anydesk Host.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -21,13 +24,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Workspace\\Prac\\Anydesk\\Client\\Anydesk Client\\Program.cs",
               "RelativeDocumentMoniker": "..\\..\\Client\\Anydesk Client\\Program.cs",
               "ToolTip": "C:\\Workspace\\Prac\\Anydesk\\Client\\Anydesk Client\\Program.cs",
               "RelativeToolTip": "..\\..\\Client\\Anydesk Client\\Program.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwCgAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAANDMzMzMDwDwAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T09:50:54.968Z",
               "IsPinned": true,
@@ -44,12 +47,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ClipboardHelper.cs",
+              "DocumentMoniker": "C:\\Workspace\\Prac\\Anydesk\\ClipboardSync\\ClipboardHelper.cs",
+              "RelativeDocumentMoniker": "..\\..\\ClipboardSync\\ClipboardHelper.cs",
+              "ToolTip": "C:\\Workspace\\Prac\\Anydesk\\ClipboardSync\\ClipboardHelper.cs",
+              "RelativeToolTip": "..\\..\\ClipboardSync\\ClipboardHelper.cs",
+              "ViewState": "AgIAABoAAACAmpmZmZknwDYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T11:11:52.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Workspace\\Prac\\Anydesk\\Host\\Anydesk Host\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Workspace\\Prac\\Anydesk\\Host\\Anydesk Host\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAwwFMAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAAEUAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T09:48:05.558Z",
               "EditorCaption": ""

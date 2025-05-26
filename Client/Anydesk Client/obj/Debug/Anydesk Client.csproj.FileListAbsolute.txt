@@ -7,3 +7,6 @@ C:\Workspace\Prac\Anydesk\Client\Anydesk Client\obj\Debug\Anydesk Client.exe
 C:\Workspace\Prac\Anydesk\Client\Anydesk Client\obj\Debug\Anydesk Client.pdb
 C:\Workspace\Prac\Anydesk\Client\Anydesk Client\obj\Debug\RemoteClient.resources
 C:\Workspace\Prac\Anydesk\Client\Anydesk Client\obj\Debug\Anydesk Client.csproj.GenerateResource.cache
+C:\Workspace\Prac\Anydesk\Client\Anydesk Client\bin\Debug\ClipboardSync.dll
+C:\Workspace\Prac\Anydesk\Client\Anydesk Client\bin\Debug\ClipboardSync.pdb
+C:\Workspace\Prac\Anydesk\Client\Anydesk Client\obj\Debug\Anydesk .FB7FB8D1.Up2Date

@@ -55,5 +55,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ClipboardSync\ClipboardSync.csproj">
+      <Project>{764c5d4f-23bc-4e06-b88b-525c82641ef1}</Project>
+      <Name>ClipboardSync</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

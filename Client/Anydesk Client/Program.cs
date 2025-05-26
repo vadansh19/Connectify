@@ -54,8 +54,14 @@ class RemoteClient : Form
         receiveThread.IsBackground = true;
         receiveThread.Start();
 
+        Thread receiveInputThread = new Thread(ReceiveInputLoop);
+        receiveInputThread.IsBackground = true;
+        receiveInputThread.Start();
+
+        ClipboardHelper.StartClipboardWatcher(inputstream);
         Application.Run(this);
     }
+
 
     #endregion Public Methods
 
@@ -90,7 +96,7 @@ class RemoteClient : Form
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
         var client = new RemoteClient();
-        client.Start("192.168.1.75");
+        client.Start("192.168.1.116");
     }
 
     void ReceiveScreenLoop()
@@ -131,6 +137,42 @@ class RemoteClient : Form
         catch { }
     }
 
+    void ReceiveInputLoop()
+    {
+        try
+        {
+            while (true)
+            {
+                int packetType = inputstream.ReadByte();
+                if (packetType == -1) return;
+
+                switch (packetType)
+                {
+                    case 0x04: // Clipboard text
+                        byte[] lengthBytes = new byte[4];
+                        if (inputstream.Read(lengthBytes, 0, 4) < 4) return;
+
+                        int textLength = BitConverter.ToInt32(lengthBytes, 0);
+                        if (textLength <= 0 || textLength > 10240) return; // sanity check (10KB max)
+
+                        byte[] textBytes = new byte[textLength];
+                        int bytesRead = 0;
+                        while (bytesRead < textLength)
+                        {
+                            int r = inputstream.Read(textBytes, bytesRead, textLength - bytesRead);
+                            if (r == 0) return;
+                            bytesRead += r;
+                        }
+
+                        string clipboardText = System.Text.Encoding.UTF8.GetString(textBytes);
+                        ClipboardHelper.SetText(clipboardText); // safely sets clipboard in STA thread
+                        break;
+                }
+            }
+        }
+        catch { }
+    }
+
     private void RemoteClient_MouseClick(object sender, MouseEventArgs e)
     {
         int scaledX, scaledY;
@@ -155,6 +197,23 @@ class RemoteClient : Form
         SendMouseScroll(delta);
     }
 
+    private void RemoteClient_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+        int scaledX, scaledY;
+        SyncMouse(e, out scaledX, out scaledY);
+        SendMouseEvent(3, (short)scaledX, (short)scaledY); // 3 = double-click
+    }
+
+    private void RemoteClient_KeyDown(object sender, KeyEventArgs e)
+    {
+        SendKeyboardEvent((byte)e.KeyValue, false); // key down
+    }
+
+    private void RemoteClient_KeyUp(object sender, KeyEventArgs e)
+    {
+        SendKeyboardEvent((byte)e.KeyValue, true); // key up
+    }
+
     void SendMouseScroll(int delta)
     {
         if (inputstream == null) return;
@@ -163,13 +222,6 @@ class RemoteClient : Form
         data[0] = 0x03; // Scroll packet
         Array.Copy(BitConverter.GetBytes(delta), 0, data, 1, 4);
         try { inputstream.Write(data, 0, 5); } catch { }
-    }
-
-    private void RemoteClient_MouseDoubleClick(object sender, MouseEventArgs e)
-    {
-        int scaledX, scaledY;
-        SyncMouse(e, out scaledX, out scaledY);
-        SendMouseEvent(3, (short)scaledX, (short)scaledY); // 3 = double-click
     }
 
     void SendMouseEvent(byte eventType, short x, short y)
@@ -215,16 +267,6 @@ class RemoteClient : Form
         }
         catch { }
 
-    }
-
-    private void RemoteClient_KeyDown(object sender, KeyEventArgs e)
-    {
-        SendKeyboardEvent((byte)e.KeyValue, false); // key down
-    }
-
-    private void RemoteClient_KeyUp(object sender, KeyEventArgs e)
-    {
-        SendKeyboardEvent((byte)e.KeyValue, true); // key up
     }
 
     #endregion Private Methods
