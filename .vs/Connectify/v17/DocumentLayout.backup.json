@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}|Client\\Connectify Client\\Connectify Client.csproj|solutionrelative:client\\connectify client\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}|Client\\Connectify Client\\Connectify Client.csproj|c:\\workspace\\work\\connectify\\client\\connectify client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}|Client\\Connectify Client\\Connectify Client.csproj|solutionrelative:client\\connectify client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}|Client\\Connectify Client\\Connectify Client.csproj|c:\\workspace\\work\\connectify\\client\\connectify client\\remoteclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}|Client\\Connectify Client\\Connectify Client.csproj|solutionrelative:client\\connectify client\\remoteclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,22 +36,22 @@
               "RelativeDocumentMoniker": "Client\\Connectify Client\\MainForm.cs",
               "ToolTip": "C:\\Workspace\\Work\\Connectify\\Client\\Connectify Client\\MainForm.cs",
               "RelativeToolTip": "Client\\Connectify Client\\MainForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T12:40:23.619Z",
+              "WhenOpened": "2025-08-20T12:45:12.729Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Workspace\\Work\\Connectify\\Client\\Connectify Client\\Program.cs",
-              "RelativeDocumentMoniker": "Client\\Connectify Client\\Program.cs",
-              "ToolTip": "C:\\Workspace\\Work\\Connectify\\Client\\Connectify Client\\Program.cs",
-              "RelativeToolTip": "Client\\Connectify Client\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAmAAAAAAAAAA==",
+              "Title": "RemoteClient.cs",
+              "DocumentMoniker": "C:\\Workspace\\Work\\Connectify\\Client\\Connectify Client\\RemoteClient.cs",
+              "RelativeDocumentMoniker": "Client\\Connectify Client\\RemoteClient.cs",
+              "ToolTip": "C:\\Workspace\\Work\\Connectify\\Client\\Connectify Client\\RemoteClient.cs",
+              "RelativeToolTip": "Client\\Connectify Client\\RemoteClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T12:39:12.88Z",
+              "WhenOpened": "2025-08-20T12:44:32.637Z",
               "EditorCaption": ""
             }
           ]

@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Workspace\\Work\\Connectify\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{764C5D4F-23BC-4E06-B88B-525C82641EF1}|ClipboardSync\\ClipboardSync.csproj|c:\\workspace\\work\\connectify\\clipboardsync\\communicationprotocol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{764C5D4F-23BC-4E06-B88B-525C82641EF1}|ClipboardSync\\ClipboardSync.csproj|solutionrelative:clipboardsync\\communicationprotocol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{764C5D4F-23BC-4E06-B88B-525C82641EF1}|ClipboardSync\\ClipboardSync.csproj|c:\\workspace\\work\\connectify\\clipboardsync\\clipboardhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{764C5D4F-23BC-4E06-B88B-525C82641EF1}|ClipboardSync\\ClipboardSync.csproj|solutionrelative:clipboardsync\\clipboardhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Host\\Connectify Host\\Connectify Host.csproj|c:\\workspace\\work\\connectify\\host\\connectify host\\remoteserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Host\\Connectify Host\\Connectify Host.csproj|solutionrelative:host\\connectify host\\remoteserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Host\\Connectify Host\\Connectify Host.csproj|c:\\workspace\\work\\connectify\\host\\connectify host\\packetsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Host\\Connectify Host\\Connectify Host.csproj|solutionrelative:host\\connectify host\\packetsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Host\\Connectify Host\\Connectify Host.csproj|c:\\workspace\\work\\connectify\\host\\connectify host\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Host\\Connectify Host\\Connectify Host.csproj|solutionrelative:host\\connectify host\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Host\\Connectify Host\\Connectify Host.csproj|c:\\workspace\\work\\connectify\\host\\connectify host\\packetreciever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Host\\Connectify Host\\Connectify Host.csproj|solutionrelative:host\\connectify host\\packetreciever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Host\\Connectify Host\\Connectify Host.csproj|c:\\workspace\\work\\connectify\\host\\connectify host\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D056EDF1-E567-4DED-A02A-4C769DF31B52}|Host\\Connectify Host\\Connectify Host.csproj|solutionrelative:host\\connectify host\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}|Client\\Connectify Client\\Connectify Client.csproj|c:\\workspace\\work\\connectify\\client\\connectify client\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E2A6483-B43A-4B7C-B74C-CE0083791EE2}|Client\\Connectify Client\\Connectify Client.csproj|solutionrelative:client\\connectify client\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,6 +59,97 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CommunicationProtocol.cs",
+              "DocumentMoniker": "C:\\Workspace\\Work\\Connectify\\ClipboardSync\\CommunicationProtocol.cs",
+              "RelativeDocumentMoniker": "ClipboardSync\\CommunicationProtocol.cs",
+              "ToolTip": "C:\\Workspace\\Work\\Connectify\\ClipboardSync\\CommunicationProtocol.cs",
+              "RelativeToolTip": "ClipboardSync\\CommunicationProtocol.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T12:49:17.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClipboardHelper.cs",
+              "DocumentMoniker": "C:\\Workspace\\Work\\Connectify\\ClipboardSync\\ClipboardHelper.cs",
+              "RelativeDocumentMoniker": "ClipboardSync\\ClipboardHelper.cs",
+              "ToolTip": "C:\\Workspace\\Work\\Connectify\\ClipboardSync\\ClipboardHelper.cs",
+              "RelativeToolTip": "ClipboardSync\\ClipboardHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T12:49:13.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PacketSender.cs",
+              "DocumentMoniker": "C:\\Workspace\\Work\\Connectify\\Host\\Connectify Host\\PacketSender.cs",
+              "RelativeDocumentMoniker": "Host\\Connectify Host\\PacketSender.cs",
+              "ToolTip": "C:\\Workspace\\Work\\Connectify\\Host\\Connectify Host\\PacketSender.cs",
+              "RelativeToolTip": "Host\\Connectify Host\\PacketSender.cs",
+              "ViewState": "AgIAABEAAACAV2ZmZmb0vxcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T12:46:52.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PacketReciever.cs",
+              "DocumentMoniker": "C:\\Workspace\\Work\\Connectify\\Host\\Connectify Host\\PacketReciever.cs",
+              "RelativeDocumentMoniker": "Host\\Connectify Host\\PacketReciever.cs",
+              "ToolTip": "C:\\Workspace\\Work\\Connectify\\Host\\Connectify Host\\PacketReciever.cs",
+              "RelativeToolTip": "Host\\Connectify Host\\PacketReciever.cs",
+              "ViewState": "AgIAACAAAADAMjMzMzMhwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T12:46:36.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RemoteServer.cs",
+              "DocumentMoniker": "C:\\Workspace\\Work\\Connectify\\Host\\Connectify Host\\RemoteServer.cs",
+              "RelativeDocumentMoniker": "Host\\Connectify Host\\RemoteServer.cs",
+              "ToolTip": "C:\\Workspace\\Work\\Connectify\\Host\\Connectify Host\\RemoteServer.cs",
+              "RelativeToolTip": "Host\\Connectify Host\\RemoteServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T12:45:52.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Workspace\\Work\\Connectify\\Host\\Connectify Host\\Program.cs",
+              "RelativeDocumentMoniker": "Host\\Connectify Host\\Program.cs",
+              "ToolTip": "C:\\Workspace\\Work\\Connectify\\Host\\Connectify Host\\Program.cs",
+              "RelativeToolTip": "Host\\Connectify Host\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T12:45:50.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InputHandler.cs",
+              "DocumentMoniker": "C:\\Workspace\\Work\\Connectify\\Host\\Connectify Host\\InputHandler.cs",
+              "RelativeDocumentMoniker": "Host\\Connectify Host\\InputHandler.cs",
+              "ToolTip": "C:\\Workspace\\Work\\Connectify\\Host\\Connectify Host\\InputHandler.cs",
+              "RelativeToolTip": "Host\\Connectify Host\\InputHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T12:45:29.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\Workspace\\Work\\Connectify\\Client\\Connectify Client\\MainForm.cs",
               "RelativeDocumentMoniker": "Client\\Connectify Client\\MainForm.cs",
@@ -43,7 +162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "RemoteClient.cs",
               "DocumentMoniker": "C:\\Workspace\\Work\\Connectify\\Client\\Connectify Client\\RemoteClient.cs",
               "RelativeDocumentMoniker": "Client\\Connectify Client\\RemoteClient.cs",
