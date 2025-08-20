@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace RemoteDesktop.Shared
 {
-    public static class ClipboardHelper
+    public static class ClipboardService
     {
         public static void SetText(string text)
         {

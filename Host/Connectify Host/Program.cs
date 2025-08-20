@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Net;
-using System.Net.Sockets;
-using System.Runtime.InteropServices;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace RemoteDesktop.Server
@@ -13,8 +7,10 @@ namespace RemoteDesktop.Server
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("Starting Remote Desktop Server...");
-            var server = new RemoteServer(8888, 8889);
+            Console.Title = "Remote Desktop Server";
+            // We now only need a single port for all communication.
+            const int port = 8888;
+            var server = new RemoteServer(port);
             await server.StartAsync();
         }
     }

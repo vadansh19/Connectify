@@ -11,17 +11,11 @@ namespace RemoteDesktop.Client
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Console.Write("Enter the IP Address of the host: ");
-            var host = "192.168.1.154";
-            if (string.IsNullOrWhiteSpace(host))
-            {
-                Console.WriteLine("Invalid IP address.");
-                return;
-            }
+            string host = "192.168.1.154"; // Replace with a prompt or config
+            const int port = 8888;
 
-            var remoteClient = new RemoteClient(host, 8888, 8889);
-            var mainForm = new MainForm(remoteClient);
-            Application.Run(mainForm);
+            var clientForm = new MainForm(host, port);
+            Application.Run(clientForm);
         }
     }
 }

@@ -24,7 +24,6 @@ C:\Workspace\Work\Connectify\Host\Connectify Host\obj\Debug\Connectify Host.cspr
 C:\Workspace\Work\Connectify\Host\Connectify Host\obj\Debug\Connecti.E2EC483C.Up2Date
 C:\Workspace\Work\Connectify\Host\Connectify Host\obj\Debug\Connectify Host.exe
 C:\Workspace\Work\Connectify\Host\Connectify Host\obj\Debug\Connectify Host.pdb
-C:\Workspace\Work\Connectify\Host\Connectify Host\obj\Debug\Connectify Host.exe.config
 C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\bin\Debug\Connectify Host.exe.config
 C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\bin\Debug\Connectify Host.exe
 C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\bin\Debug\Connectify Host.pdb

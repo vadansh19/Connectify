@@ -1,125 +1,139 @@
-﻿using RemoteDesktop.Shared;
-using System;
+﻿using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using RemoteDesktop.Shared;
 
 namespace RemoteDesktop.Client
 {
     public partial class MainForm : Form
     {
-        private readonly RemoteClient _client;
+        private readonly RemoteClient _desktopManager;
         private Size _hostImageSize;
 
-        public MainForm(RemoteClient client)
+        public MainForm(string host, int port)
         {
-            _client = client;
             InitializeComponent();
-            this.Load += MainForm_Load;
+            _desktopManager = new RemoteClient(host, port);
+            _desktopManager.ImageReceived += OnImageReceived;
+            _desktopManager.Disconnected += OnDisconnected;
         }
 
-        private async void MainForm_Load(object sender, EventArgs e)
+        private async void ClientForm_Load(object sender, EventArgs e)
         {
-            _client.ImageReceived += Client_ImageReceived;
-            _client.Disconnected += Client_Disconnected;
             try
             {
-                await _client.ConnectAsync();
+                await _desktopManager.ConnectAsync();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to connect to the host: {ex.Message}");
-                Application.Exit();
+                MessageBox.Show($"Failed to connect: {ex.Message}", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
             }
         }
 
-        private void Client_ImageReceived(object sender, byte[] imageData)
+        private void OnImageReceived(object sender, byte[] imageData)
         {
-            if (imageData == null || imageData.Length == 0)
+            try
             {
-                throw new ArgumentException("Image data is invalid.");
-            }
-
-            using (var ms = new MemoryStream(imageData))
-            {
-                var image = Image.FromStream(ms);
-                _hostImageSize = image.Size;
-                this.BeginInvoke((MethodInvoker)delegate
+                using (var ms = new MemoryStream(imageData))
                 {
-                    pictureBox.Image = image;
-                    //image?.Dispose();
-                });
+                    var image = Image.FromStream(ms);
+                    _hostImageSize = image.Size;
+                    this.BeginInvoke((MethodInvoker)delegate
+                    {
+                        pictureBox.Image?.Dispose();
+                        pictureBox.Image = image;
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error processing image: {ex.Message}");
             }
         }
 
-        private void Client_Disconnected(object sender, EventArgs e)
+        private void OnDisconnected(object sender, EventArgs e)
         {
-            MessageBox.Show("Disconnected from the host.");
-            Application.Exit();
+            this.BeginInvoke((MethodInvoker)delegate
+            {
+                MessageBox.Show("Disconnected from the host.", "Disconnected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            });
         }
+
+        private (int, int) ScaleCoordinates(Point point)
+        {
+            if (_hostImageSize.IsEmpty || pictureBox.Width == 0 || pictureBox.Height == 0)
+                return (0, 0);
+
+            int scaledX = point.X * _hostImageSize.Width / pictureBox.Width;
+            int scaledY = point.Y * _hostImageSize.Height / pictureBox.Height;
+            return (scaledX, scaledY);
+        }
+
+        #region UI Event Handlers
 
         private void pictureBox_MouseMove(object sender, MouseEventArgs e)
         {
-            try
-            {
-                var (scaledX, scaledY) = ScaleCoordinates(e);
-                _client.SendMouseEventAsync(CommunicationProtocol.MouseEventType.Move, (short)scaledX, (short)scaledY);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error processing mouse move: {ex.Message}");
-            }
+            var (x, y) = ScaleCoordinates(e.Location);
+            var payload = new byte[5];
+            payload[0] = (byte)CommunicationProtocol.MouseEventType.Move;
+            BitConverter.GetBytes((short)x).CopyTo(payload, 1);
+            BitConverter.GetBytes((short)y).CopyTo(payload, 3);
+            _desktopManager.SendPacketAsync(CommunicationProtocol.MouseEvent, payload);
         }
 
         private void pictureBox_MouseClick(object sender, MouseEventArgs e)
         {
-            var (scaledX, scaledY) = ScaleCoordinates(e);
-            var eventType = e.Button == MouseButtons.Left
-                ? CommunicationProtocol.MouseEventType.LeftClick
-                : CommunicationProtocol.MouseEventType.RightClick;
-            _client.SendMouseEventAsync(eventType, (short)scaledX, (short)scaledY);
+            var (x, y) = ScaleCoordinates(e.Location);
+            var eventType = e.Button == MouseButtons.Left ? CommunicationProtocol.MouseEventType.LeftClick : CommunicationProtocol.MouseEventType.RightClick;
+            var payload = new byte[5];
+            payload[0] = (byte)eventType;
+            BitConverter.GetBytes((short)x).CopyTo(payload, 1);
+            BitConverter.GetBytes((short)y).CopyTo(payload, 3);
+            _desktopManager.SendPacketAsync(CommunicationProtocol.MouseEvent, payload);
         }
 
         private void pictureBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            var (scaledX, scaledY) = ScaleCoordinates(e);
-            _client.SendMouseEventAsync(CommunicationProtocol.MouseEventType.DoubleClick, (short)scaledX, (short)scaledY);
+            var (x, y) = ScaleCoordinates(e.Location);
+            var payload = new byte[5];
+            payload[0] = (byte)CommunicationProtocol.MouseEventType.DoubleClick;
+            BitConverter.GetBytes((short)x).CopyTo(payload, 1);
+            BitConverter.GetBytes((short)y).CopyTo(payload, 3);
+            _desktopManager.SendPacketAsync(CommunicationProtocol.MouseEvent, payload);
         }
 
-        private void MainForm_MouseWheel(object sender, MouseEventArgs e)
+        private void ClientForm_MouseWheel(object sender, MouseEventArgs e)
         {
-            _client.SendMouseScrollAsync(e.Delta);
+            var payload = BitConverter.GetBytes(e.Delta);
+            _desktopManager.SendPacketAsync(CommunicationProtocol.MouseScrollEvent, payload);
         }
 
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        private void ClientForm_KeyDown(object sender, KeyEventArgs e)
         {
-            _client.SendKeyboardEventAsync((byte)e.KeyCode, CommunicationProtocol.KeyboardEventType.KeyDown);
+            var payload = new byte[] { (byte)e.KeyCode, (byte)CommunicationProtocol.KeyboardEventType.KeyDown };
+            _desktopManager.SendPacketAsync(CommunicationProtocol.KeyboardEvent, payload);
         }
 
-        private void MainForm_KeyUp(object sender, KeyEventArgs e)
+        private void ClientForm_KeyUp(object sender, KeyEventArgs e)
         {
-            _client.SendKeyboardEventAsync((byte)e.KeyCode, CommunicationProtocol.KeyboardEventType.KeyUp);
-        }
-
-        private (int, int) ScaleCoordinates(MouseEventArgs point)
-        {
-            if (_hostImageSize.IsEmpty) return (0, 0);
-            var scaledX = point.X * _hostImageSize.Width / pictureBox.Width;
-            var scaledY = point.Y * _hostImageSize.Height / pictureBox.Height;
-            return (scaledX, scaledY);
+            var payload = new byte[] { (byte)e.KeyCode, (byte)CommunicationProtocol.KeyboardEventType.KeyUp };
+            _desktopManager.SendPacketAsync(CommunicationProtocol.KeyboardEvent, payload);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            _client.Disconnect();
+            _desktopManager.Disconnect();
             base.OnFormClosing(e);
         }
 
+        #endregion
+
         #region Windows Form Designer generated code
 
-        private System.Windows.Forms.PictureBox pictureBox;
-
+        private PictureBox pictureBox;
         private void InitializeComponent()
         {
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -131,7 +145,7 @@ namespace RemoteDesktop.Client
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(800, 450);
+            this.pictureBox.Size = new System.Drawing.Size(800, 600);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
@@ -141,20 +155,19 @@ namespace RemoteDesktop.Client
             // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.pictureBox);
             this.KeyPreview = true;
             this.Name = "MainForm";
-            this.Text = "Remote Desktop Client";
+            this.Text = "Remote Desktop Viewer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
-            this.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseWheel);
+            this.Load += new System.EventHandler(this.ClientForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ClientForm_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ClientForm_KeyUp);
+            this.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.ClientForm_MouseWheel);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
-
         }
-
         #endregion
     }
 }
