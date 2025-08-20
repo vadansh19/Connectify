@@ -11,3 +11,31 @@ C:\Workspace\Prac\Connectify\Host\Connectify Host\bin\Debug\Connectify Host.exe
 C:\Workspace\Prac\Connectify\Host\Connectify Host\bin\Debug\Connectify Host.pdb
 C:\Workspace\Prac\Connectify\Host\Connectify Host\obj\Debug\Connectify Host.exe
 C:\Workspace\Prac\Connectify\Host\Connectify Host\obj\Debug\Connectify Host.pdb
+C:\Workspace\Work\Connectify\Host\Connectify Host\bin\Debug\Connectify Host.exe.config
+C:\Workspace\Work\Connectify\Host\Connectify Host\bin\Debug\Connectify Host.exe
+C:\Workspace\Work\Connectify\Host\Connectify Host\bin\Debug\Connectify Host.pdb
+C:\Workspace\Work\Connectify\Host\Connectify Host\bin\Debug\ClipboardSync.dll
+C:\Workspace\Work\Connectify\Host\Connectify Host\bin\Debug\System.Drawing.Common.dll
+C:\Workspace\Work\Connectify\Host\Connectify Host\bin\Debug\ClipboardSync.pdb
+C:\Workspace\Work\Connectify\Host\Connectify Host\bin\Debug\System.Drawing.Common.pdb
+C:\Workspace\Work\Connectify\Host\Connectify Host\bin\Debug\System.Drawing.Common.xml
+C:\Workspace\Work\Connectify\Host\Connectify Host\obj\Debug\Connectify Host.csproj.AssemblyReference.cache
+C:\Workspace\Work\Connectify\Host\Connectify Host\obj\Debug\Connectify Host.csproj.CoreCompileInputs.cache
+C:\Workspace\Work\Connectify\Host\Connectify Host\obj\Debug\Connecti.E2EC483C.Up2Date
+C:\Workspace\Work\Connectify\Host\Connectify Host\obj\Debug\Connectify Host.exe
+C:\Workspace\Work\Connectify\Host\Connectify Host\obj\Debug\Connectify Host.pdb
+C:\Workspace\Work\Connectify\Host\Connectify Host\obj\Debug\Connectify Host.exe.config
+C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\bin\Debug\Connectify Host.exe.config
+C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\bin\Debug\Connectify Host.exe
+C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\bin\Debug\Connectify Host.pdb
+C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\bin\Debug\ClipboardSync.dll
+C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\bin\Debug\System.Drawing.Common.dll
+C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\bin\Debug\ClipboardSync.pdb
+C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\bin\Debug\System.Drawing.Common.pdb
+C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\bin\Debug\System.Drawing.Common.xml
+C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\obj\Debug\Connectify Host.csproj.AssemblyReference.cache
+C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\obj\Debug\Connectify Host.exe.config
+C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\obj\Debug\Connectify Host.csproj.CoreCompileInputs.cache
+C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\obj\Debug\Connecti.E2EC483C.Up2Date
+C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\obj\Debug\Connectify Host.exe
+C:\Workspace\Work\Connectify Upgraded\Host\Connectify Host\obj\Debug\Connectify Host.pdb

@@ -3,64 +3,53 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Windows.Forms;
 
-public static class ClipboardHelper
+namespace RemoteDesktop.Shared
 {
-    const byte CLIPBOARD_TEXT = 0x04;
-
-    public static void SetText(string text)
+    public static class ClipboardHelper
     {
-        Thread thread = new Thread(() =>
+        public static void SetText(string text)
         {
-            try { Clipboard.SetText(text); } catch { }
-        });
-        thread.SetApartmentState(ApartmentState.STA);
-        thread.Start();
-        thread.Join();
-    }
+            if (string.IsNullOrEmpty(text)) return;
 
-    public static string GetText()
-    {
-        string result = "";
-        Thread thread = new Thread(() =>
-        {
-            try { result = Clipboard.ContainsText() ? Clipboard.GetText() : ""; } catch { }
-        });
-        thread.SetApartmentState(ApartmentState.STA);
-        thread.Start();
-        thread.Join();
-        return result;
-    }
-
-    public static void StartClipboardWatcher(NetworkStream stream)
-    {
-        string lastClipboard = "";
-
-        new Thread(() =>
-        {
-            while (true)
+            var thread = new Thread(() =>
             {
                 try
                 {
-                    string current = ClipboardHelper.GetText();
-                    if (current != lastClipboard)
-                    {
-                        lastClipboard = current;
-
-                        byte[] textBytes = System.Text.Encoding.UTF8.GetBytes(current);
-                        byte[] msg = new byte[1 + 4 + textBytes.Length];
-                        msg[0] = CLIPBOARD_TEXT;
-                        Buffer.BlockCopy(BitConverter.GetBytes(textBytes.Length), 0, msg, 1, 4);
-                        Buffer.BlockCopy(textBytes, 0, msg, 5, textBytes.Length);
-
-                        stream.Write(msg, 0, msg.Length);
-                    }
-
-                    Thread.Sleep(1000); 
+                    Clipboard.SetText(text, TextDataFormat.UnicodeText);
                 }
-                catch {  }
-            }
-        })
-        { IsBackground = true }.Start();
-    }
+                catch (Exception ex)
+                {
+                    // Log the exception
+                    Console.WriteLine($"Clipboard SetText error: {ex.Message}");
+                }
+            });
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            thread.Join();
+        }
 
+        public static string GetText()
+        {
+            string result = string.Empty;
+            var thread = new Thread(() =>
+            {
+                try
+                {
+                    if (Clipboard.ContainsText())
+                    {
+                        result = Clipboard.GetText(TextDataFormat.UnicodeText);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log the exception
+                    Console.WriteLine($"Clipboard GetText error: {ex.Message}");
+                }
+            });
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            thread.Join();
+            return result;
+        }
+    }
 }

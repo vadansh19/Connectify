@@ -10,3 +10,29 @@ C:\Workspace\Prac\Connectify\Client\Connectify Client\bin\Debug\Connectify Clien
 C:\Workspace\Prac\Connectify\Client\Connectify Client\bin\Debug\Connectify Client.pdb
 C:\Workspace\Prac\Connectify\Client\Connectify Client\obj\Debug\Connectify Client.exe
 C:\Workspace\Prac\Connectify\Client\Connectify Client\obj\Debug\Connectify Client.pdb
+C:\Workspace\Work\Connectify\Client\Connectify Client\bin\Debug\Connectify Client.exe.config
+C:\Workspace\Work\Connectify\Client\Connectify Client\bin\Debug\Connectify Client.exe
+C:\Workspace\Work\Connectify\Client\Connectify Client\bin\Debug\Connectify Client.pdb
+C:\Workspace\Work\Connectify\Client\Connectify Client\bin\Debug\ClipboardSync.dll
+C:\Workspace\Work\Connectify\Client\Connectify Client\bin\Debug\ClipboardSync.pdb
+C:\Workspace\Work\Connectify\Client\Connectify Client\obj\Debug\Connectify Client.csproj.AssemblyReference.cache
+C:\Workspace\Work\Connectify\Client\Connectify Client\obj\Debug\Connectify Client.csproj.GenerateResource.cache
+C:\Workspace\Work\Connectify\Client\Connectify Client\obj\Debug\Connectify Client.csproj.CoreCompileInputs.cache
+C:\Workspace\Work\Connectify\Client\Connectify Client\obj\Debug\Connecti.E825B190.Up2Date
+C:\Workspace\Work\Connectify\Client\Connectify Client\obj\Debug\Connectify Client.exe
+C:\Workspace\Work\Connectify\Client\Connectify Client\obj\Debug\Connectify Client.pdb
+C:\Workspace\Work\Connectify\Client\Connectify Client\obj\Debug\Connectify Client.exe.config
+C:\Workspace\Work\Connectify\Client\Connectify Client\obj\Debug\RemoteDesktop.Client.Program.resources
+C:\Workspace\Work\Connectify Upgraded\Client\Connectify Client\bin\Debug\Connectify Client.exe.config
+C:\Workspace\Work\Connectify Upgraded\Client\Connectify Client\bin\Debug\Connectify Client.exe
+C:\Workspace\Work\Connectify Upgraded\Client\Connectify Client\bin\Debug\Connectify Client.pdb
+C:\Workspace\Work\Connectify Upgraded\Client\Connectify Client\bin\Debug\ClipboardSync.dll
+C:\Workspace\Work\Connectify Upgraded\Client\Connectify Client\bin\Debug\ClipboardSync.pdb
+C:\Workspace\Work\Connectify Upgraded\Client\Connectify Client\obj\Debug\Connectify Client.csproj.AssemblyReference.cache
+C:\Workspace\Work\Connectify Upgraded\Client\Connectify Client\obj\Debug\Connectify Client.exe.config
+C:\Workspace\Work\Connectify Upgraded\Client\Connectify Client\obj\Debug\RemoteDesktop.Client.Program.resources
+C:\Workspace\Work\Connectify Upgraded\Client\Connectify Client\obj\Debug\Connectify Client.csproj.GenerateResource.cache
+C:\Workspace\Work\Connectify Upgraded\Client\Connectify Client\obj\Debug\Connectify Client.csproj.CoreCompileInputs.cache
+C:\Workspace\Work\Connectify Upgraded\Client\Connectify Client\obj\Debug\Connecti.E825B190.Up2Date
+C:\Workspace\Work\Connectify Upgraded\Client\Connectify Client\obj\Debug\Connectify Client.exe
+C:\Workspace\Work\Connectify Upgraded\Client\Connectify Client\obj\Debug\Connectify Client.pdb
